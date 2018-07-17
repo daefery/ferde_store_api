@@ -17,3 +17,11 @@ $router->get('/', function () use ($router) {
 $router->get('/key', function() {
     return str_random(32);
 });
+/**
+ * Routes for resource product
+ */
+$router->get('product', 'ProductController@all');
+$router->get('product/{id}', 'ProductController@get');
+$router->post('product', 'ProductController@add');
+$router->put('product/{id}', 'ProductController@put');
+$router->delete('product/{id}', 'ProductController@remove');
